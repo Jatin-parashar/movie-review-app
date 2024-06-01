@@ -1,0 +1,79 @@
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+}
+
+h2 {
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+nav div {
+    margin: 0 15px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 5px 10px;
+    color: black;
+}
+
+.search input {
+
+
+
+    margin-left: 5px;
+    padding: 4px 8px;
+    outline: none;
+    border: none;
+    background-color: #fff;
+    color: black;
+    
+}
+
+/* .search input::placeholder {
+    color: #888;
+} */
+
+.search input:focus {
+    outline: none;
+    /* border-color: #ff6347; */
+    /* box-shadow: 0 0 5px rgba(255, 99, 71, 0.5); */
+    /* box-shadow: 0 0 5px rgba(255, 99, 71, 0.5); */
+}
+
+
+
+
+.profile {
+    margin: 0;
+}
+
+/* Normal yet attractive colors */
+header {
+    background-color: #444; /* Darker background */
+    color: #ddd; /* Slightly lighter text */
+}
+
+/* nav div:hover,
+.profile:hover {
+    color: #ff6347;
+} */
+
+.search input:focus {
+    border-color: #ff6347; /* Matching attractive color on focus */
+}
