@@ -1,25 +1,39 @@
-import { createBrowserRouter, RouterProvider, useLocation } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  useLocation,
+} from "react-router-dom";
 import Root from "./pages/Root";
-import MoviePage from "./pages/MoviePage";
 import Profile from "./pages/Profile";
 import Home from "./pages/Home";
+import React from "react";
+import ShowPage from "./pages/ShowPage";
+import ErrorPage from "./pages/ErrorPage";
 function App() {
   const router = createBrowserRouter([
     {
       path: "/",
       element: <Root />,
-      errorElement: <h1>Error has occured</h1>,
+      errorElement: <ErrorPage />,
       children: [
         {
-          path: "/" || "/movies" || "tv",
+          path: "/",
           element: <Home />,
         },
+        // {
+        //   path: "/movie",
+        //   element: <Home />,
+        // },
+        // {
+        //   path: "/tv",
+        //   element: <Home />,
+        // },
         {
-          path: "/movie/:id",
-          element: <MoviePage />,
+          path: "/:type/:id",
+          element: <ShowPage />,
         },
         {
-          path: "/profile/userProfileId",
+          path: "/profile/:userProfileId",
           element: <Profile />,
         },
       ],

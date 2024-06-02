@@ -1,0 +1,59 @@
+.movie {
+    text-decoration: none;
+    color: inherit;
+    background-color: #000000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0; /* Remove padding from .movie */
+    overflow: hidden; /* Hide overflow to keep text inside the card */
+    position: relative; /* Positioning for absolute children */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.movie img {
+    border-radius: 8px;
+    width: 100%; /* Make the image cover the entire card */
+    height: 100%; /* Make the image cover the entire card */
+    object-fit: cover;
+    /* Ensure image covers the area */
+    margin-bottom: 0; /* Remove margin as image covers the whole card */
+    transition: opacity 0.3s; /* Smooth transition for the image opacity */
+}
+
+.movie h4 {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: white;
+    opacity: 0; /* Initially hide the text */
+    transition: opacity 0.3s; /* Smooth transition for text opacity */
+    position: absolute; /* Position text absolutely within the card */
+    top: 50%; /* Center the text vertically */
+    left: 50%; /* Center the text horizontally */
+    transform: translate(-50%, -50%); /* Translate to perfectly center */
+}
+
+.movie:hover {
+    transform: translateY(-10px);
+    /* Lift the card slightly on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Slightly stronger shadow on hover */
+}
+
+.movie:hover img {
+    opacity: 0.3; /* Dim the image on hover */
+}
+
+.movie:hover h4 {
+    opacity: 1; /* Show the text on hover */
+}
+
+
+
+
+
+
+

@@ -1,0 +1,60 @@
+.movie {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 80vw;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 2px solid red;
+}
+
+.movie div {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    padding-left: 30px;
+    /* justify-content: center; */
+    /* align-items: center; */
+    width: 50%;
+    border: 2px solid red;
+
+}
+
+.movie img {
+    border: 2px solid red;
+    border-radius: 8px;
+    width: 50%;
+    height: auto;
+    height: 20%;
+
+    object-fit: cover;
+    /* Ensure image covers the area */
+    margin-bottom: 15px;
+    /* Space between image and text */
+}
+
+.movie h4 {
+    font-size: 1.2em;
+    margin: 10px 0;
+    border: 2px solid red;
+    text-align: center;
+    color: #333;
+    /* Darker text color */
+}
+
+/* .movie p {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 10px;
+} */
+
+/* .movie:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+} */

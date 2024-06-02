@@ -1,0 +1,60 @@
+.modal {
+  border: none;
+  border-radius: 8px;
+  padding: 2rem;
+  background-color: #7d7d7d;
+  color: #000;
+}
+
+.modal[open] {
+  animation: slide-in-from-top 0.35s ease-out;
+}
+
+@keyframes slide-in-from-top {
+  0% {
+    transform: translateY(-15%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.modal h2 {
+  font-family: "Handjet", monospace;
+  margin: 0 0 0.25rem 0;
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+.modal p {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+/* .modal p strong {
+    color: #10655b;
+  } */
+/* .modal div {
+    text-align: right;
+  } */
+.modal button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  background: #12352f;
+  color: #edfcfa;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.modal button:hover {
+  background: #051715;
+}

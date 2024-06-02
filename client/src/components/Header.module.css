@@ -4,12 +4,16 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #333;
+    /* background-color: #333; */
+    background-color: #b22222; /* Firebrick red background */
     color: #fff;
+   
+    overflow-y: hidden;
 }
 
 h2 {
     margin: 0;
+    cursor: pointer;
 }
 
 nav {
@@ -21,15 +25,19 @@ nav {
 
 nav div {
     margin: 0 15px;
+    /* color: #1c1c1c; */
+    cursor: pointer;
+    
 }
 
 .search {
     display: flex;
     align-items: center;
     background-color: #fff;
-    border-radius: 20px;
+    /* border-radius: 7px; */
     padding: 5px 10px;
     color: black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .search input {
@@ -45,10 +53,6 @@ nav div {
     
 }
 
-/* .search input::placeholder {
-    color: #888;
-} */
-
 .search input:focus {
     outline: none;
     /* border-color: #ff6347; */
@@ -61,19 +65,51 @@ nav div {
 
 .profile {
     margin: 0;
+    cursor: pointer;
 }
 
-/* Normal yet attractive colors */
-header {
-    background-color: #444; /* Darker background */
-    color: #ddd; /* Slightly lighter text */
-}
 
-/* nav div:hover,
-.profile:hover {
-    color: #ff6347;
-} */
 
 .search input:focus {
     border-color: #ff6347; /* Matching attractive color on focus */
 }
+
+
+
+.active{
+    color: #000000;
+    /* border-bottom: 2px solid black; */
+    /* color:#1c1c1c; */
+    /* opacity: 1;
+    font: 2rem; */
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

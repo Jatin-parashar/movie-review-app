@@ -1,5 +1,5 @@
 import bodyParser from "body-parser";
-import express, { response } from "express";
+import express from "express";
 
 const app = express();
 
@@ -14,29 +14,47 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/movies", (request, response) => {
-  // response.json(movies);
-});
+// app.get("/movies", (request, response) => {
+//   // response.json(movies);
+// });
 
-app.post("/display", (request, response) => {
-  console.log(request.body);
-  const { type, keyword } = request.body;
+// app.post("/display", (request, response) => {
+//   console.log(request.body);
+//   const { type, keyword } = request.body;
 
-  console.log(
-    `https://api.themoviedb.org/3/search/${type}?api_key=${API_KEY}&query=${keyword}`
-  );
-  fetch(
-    `https://api.themoviedb.org/3/search/${type}?api_key=${API_KEY}&query=${keyword}`
-  )
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      response.json(data);
-      return data;
-    });
-});
+//   // console.log(
+//   //   `https://api.themoviedb.org/3/search/${type}?api_key=${API_KEY}&query=${keyword}`
+//   // );
+//   async function fetchData() {
+//     const res = await fetch(
+//       `https://api.themoviedb.org/3/search/${type}?api_key=${API_KEY}&query=${keyword}`
+//     );
+//     const data = await res.json();
+//     response.json(data);
+//     // .then((response) => {
+//     //   return response.json();
+//     // })
+//     // .then((data) => {
+//     //   response.json(data);
+//     //   return data;
+//     // });
+//   }
+//   fetchData();
+// });
 
+// app.get("/:type/:id", (request, response) => {
+//   const id = request.params.id;
+//   const type = request.params.type;
+//   // console.log(`https://api.themoviedb.org/3/movie/${p.id}`);
+//   fetch(`https://api.themoviedb.org/3/${type}/${id}?api_key=${API_KEY}`)
+//     .then((response) => {
+//       return response.json();
+//     })
+//     .then((data) => {
+//       response.json(data);
+//       return data;
+//     });
+// });
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
