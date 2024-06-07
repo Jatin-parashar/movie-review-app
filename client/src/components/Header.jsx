@@ -5,6 +5,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { RequestContext } from "../store/HTTPRequestContextProvider";
 import React from "react";
 
+import user from "../assets/user-image.jpg";
+
 const Header = ({}) => {
   const ref = useRef();
 
@@ -67,7 +69,10 @@ const Header = ({}) => {
           />
         </div>
       </nav>
-      <div className={styles.profile}>Profile</div>
+      <div className={styles.profile}>
+        <span>Profile</span>
+        {/* <img src={user} /> */}
+      </div>
     </header>
   );
 };

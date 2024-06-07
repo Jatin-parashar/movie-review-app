@@ -1,0 +1,21 @@
+.style {
+    height: 92vh;
+    width: 100vw;
+    display: flex;
+    /* border: 2px solid red; */
+    opacity: 0.7;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    pointer-events: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+
+    >img {
+        width: 150px;
+        height: 150px;
+        /* border: 2px solid red; */
+    }
+
+}

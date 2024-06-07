@@ -1,5 +1,6 @@
 import bodyParser from "body-parser";
-import express from "express";
+import express, { json } from "express";
+import Review from "./models/reviewModel.js";
 
 const app = express();
 
@@ -12,6 +13,27 @@ app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Methods", "GET, POST");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
   next();
+});
+
+app.post("/reviews", (req, res) => {
+  console.log(req.body);
+  const { id, reviewData, date, timestamp } = req.body;
+  Review.insertMany({
+    _id: id,
+    name: reviewData.name,
+    review: reviewData.review,
+    rating: reviewData.rating,
+    date: date,
+    timestamp: timestamp,
+  });
+});
+
+app.get("/reviews/:id", async (req, res) => {
+  const { id } = req.params;
+  console.log(id);
+  // const list = [];
+  const reviews = await Review.find({ _id: id });
+  res.json(reviews);
 });
 
 // app.get("/movies", (request, response) => {

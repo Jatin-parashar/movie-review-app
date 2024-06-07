@@ -1,0 +1,57 @@
+.review {
+
+
+    /* border-radius: 7px;
+    width: 300px;
+    box-shadow: 8px 8px 8px #ccc;
+    padding: 15px;
+    margin: 16px;
+    border: 2px solid black; */
+    
+    border-radius: 7px;
+    width: 300px;
+    box-shadow:8px 8px 8px #ccc;
+    padding: 15px;
+    margin: 16px;
+    border: 2px solid black;
+    justify-content: space-between; /* Align content horizontally */
+    align-items: center; /* Align content vertically */
+    
+  }
+  .name{
+    font-size: 20px;
+    font-weight: 700;
+    width: 300px;
+    text-transform: capitalize;
+  }
+  .rating{
+  
+    font-size: 11px;
+    font-weight: 600;
+    
+  }
+  .reviewBox{
+    padding-top: 20px;
+    height: 70px;
+    overflow: auto;
+    font-weight: 600;
+    width: 300px;
+    
+  }
+  
+  .timeDate{
+    display: flex;
+  
+  }
+  
+  /* Style for the date on the left */
+  .date {
+    flex: 1; /* Takes up the available space on the left */
+    text-align: left;
+  }
+  
+  /* Style for the timeElapsed on the right */
+  .timeElapsed {
+    text-align: right;
+    flex: 1; /* Takes up the available space on the right */
+  }

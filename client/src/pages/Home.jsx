@@ -6,20 +6,8 @@ import { ShowList } from "../components/ShowList";
 import { RequestContext } from "../store/HTTPRequestContextProvider";
 import React from "react";
 import Modal from "../UI/Modal";
+import styles from "./Home.module.css"
 
-const styles = {
-  height: "90vh",
-  width: "150px",
-  display: "flex",
-  opacity: 0.7,
-  justifyContent: "center",
-  alignItems: "center",
-  flexDirection: "column",
-  pointerEvents: "none",
-  MozUserSelect: "none",
-  WebkitUserSelect: "none",
-  userSelect: "none",
-};
 const API_KEY = import.meta.env.VITE_API_KEY;
 
 const Home = () => {
@@ -78,9 +66,8 @@ const Home = () => {
       ) : (
         <>
           {/* when nothing has been searched or to show */}
-          <div style={styles}>
+          <div className={styles.style}>
             <img src={logo} alt="no movies searched!" />
-            {/* <div>No movie searched yet!</div> */}
           </div>
         </>
       )}
