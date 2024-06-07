@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from "react";
 import classes from "./AllReviews.module.css";
 
-export default function AllReviews({ reviewData, timestamp, date }) {
+export default function AllReviews({
+  name,
+  review,
+  rating,
+  timestamp,
+  date,
+}) {
   let stars = "";
-  for (let i = 0; i < reviewData.rating; i++) {
+  for (let i = 0; i < rating; i++) {
     stars += "⭐";
   }
   const [timeElapsed, setTimeElapsed] = useState("");
@@ -14,23 +20,29 @@ export default function AllReviews({ reviewData, timestamp, date }) {
       const timeDifference = currentDate - reviewDate;
 
       if (timeDifference < 60000) {
-        setTimeElapsed(`${Math.floor(timeDifference / 1000)} seconds ago`);
+        const seconds = Math.floor(timeDifference / 1000);
+        setTimeElapsed(`${seconds} ${seconds === 1 ? 'second' : 'seconds'} ago`);
       } else if (timeDifference < 3600000) {
-        setTimeElapsed(`${Math.floor(timeDifference / 60000)} minutes ago`);
+        const minutes = Math.floor(timeDifference / 60000);
+        setTimeElapsed(`${minutes} ${minutes === 1 ? 'minute' : 'minutes'} ago`);
       } else if (timeDifference < 86400000) {
-        setTimeElapsed(`${Math.floor(timeDifference / 3600000)} hours ago`);
+        const hours = Math.floor(timeDifference / 3600000);
+        setTimeElapsed(`${hours} ${hours === 1 ? 'hour' : 'hours'} ago`);
       } else if (timeDifference < 604800000) {
-        setTimeElapsed(`${Math.floor(timeDifference / 86400000)} days ago`);
+        const days = Math.floor(timeDifference / 86400000);
+        setTimeElapsed(`${days} ${days === 1 ? 'day' : 'days'} ago`);
       } else if (timeDifference < 31536000000) {
-        setTimeElapsed(`${Math.floor(timeDifference / 604800000)} weeks ago`);
+        const weeks = Math.floor(timeDifference / 604800000);
+        setTimeElapsed(`${weeks} ${weeks === 1 ? 'week' : 'weeks'} ago`);
       } else {
-        setTimeElapsed(`${Math.floor(timeDifference / 31536000000)} years ago`);
+        const years = Math.floor(timeDifference / 31536000000);
+        setTimeElapsed(`${years} ${years === 1 ? 'year' : 'years'} ago`);
       }
+      
     };
 
-    updateElapsedTime(); // Initial update
+    updateElapsedTime();
 
-    // Periodically update the time elapsed every minute
     const interval = setInterval(updateElapsedTime, 60000);
 
     return () => clearInterval(interval);
@@ -38,9 +50,9 @@ export default function AllReviews({ reviewData, timestamp, date }) {
 
   return (
     <div className={classes.review}>
-      <div className={classes.name}>{reviewData.name}</div>
+      <div className={classes.name}>{name}</div>
       <div className={classes.rating}>{stars}</div>
-      <div className={classes.reviewBox}>{reviewData.review}</div>
+      <div className={classes.reviewBox}>{review}</div>
       {/* <div className={classes.date}>
         {props.date}
       </div>

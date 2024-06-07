@@ -70,7 +70,7 @@ const Header = ({}) => {
         </div>
       </nav>
       <div className={styles.profile}>
-        <span>Profile</span>
+        <span>Contact</span>
         {/* <img src={user} /> */}
       </div>
     </header>

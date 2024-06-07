@@ -3,16 +3,16 @@ import React, { useEffect, useState } from "react";
 import ShowInfoExpanded from "../components/ShowInfoExpanded";
 import AddReview from "../components/Review/AddReview";
 import Button from "../UI/Button";
+import Review from "../components/Review/Review";
 
 const ShowPage = () => {
   const [data, setData] = useState(null);
 
-  const [openReview, setOpenReview] = useState(false);
   const { type, id } = useParams();
   // console.log(type, id);
 
   if (type !== "movie" && type !== "tv") {
-    throw new Error("Route");
+    throw new Error("Route not used!");
   }
 
   useEffect(() => {
@@ -30,30 +30,20 @@ const ShowPage = () => {
       }
 
       const showData = await response.json();
-      console.log(showData);
+      // console.log(showData);
       setData(showData);
     }
 
     fetchdata();
   }, []);
 
-  function onReview() {
-    setOpenReview(true);
-  }
   // console.log(p.id);
   return (
     <>
       {data ? (
         <>
           <ShowInfoExpanded data={data} />
-          {/* Review */}
-
-          {!openReview && (
-            <div>
-              <Button onClick={onReview}>Add Review</Button>
-            </div>
-          )}
-          {openReview && <AddReview id={data.id} />}
+          <Review />
         </>
       ) : (
         <h2>Loading...</h2>

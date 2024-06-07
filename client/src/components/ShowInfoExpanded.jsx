@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styles from "./ShowInfoExpanded.module.css";
 
 const ShowInfoExpanded = ({ data }) => {
-
   return (
     <>
       <div className={styles.movie}>
@@ -32,8 +31,6 @@ const ShowInfoExpanded = ({ data }) => {
           </p>
         </div>
       </div>
-
-      
     </>
   );
 };

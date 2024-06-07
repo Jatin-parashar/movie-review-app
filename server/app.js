@@ -1,6 +1,5 @@
 import bodyParser from "body-parser";
 import express, { json } from "express";
-import Review from "./models/reviewModel.js";
 
 const app = express();
 
@@ -8,6 +7,7 @@ const port = 3000 || process.env.PORT;
 const API_KEY = "fa432ac38f7f7294549df7781c0e8e49";
 app.use(bodyParser.json());
 
+import Review from "./models/reviewModel.js";
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST");
@@ -15,25 +15,39 @@ app.use((req, res, next) => {
   next();
 });
 
+const createOrUpdateReview = async (id, reviewInfo) => {
+  try {
+    const result = await Review.findOneAndUpdate(
+      { _id: id },
+      { $addToSet: { reviewInfo: reviewInfo } },
+      { new: true, upsert: true }
+    );
+    return result;
+  } catch (error) {
+    console.error("Error in createOrUpdateReview:", error);
+    throw error;
+  }
+};
+
 app.post("/reviews", (req, res) => {
-  console.log(req.body);
+
   const { id, reviewData, date, timestamp } = req.body;
-  Review.insertMany({
-    _id: id,
+  const reviewInfo = {
     name: reviewData.name,
     review: reviewData.review,
     rating: reviewData.rating,
     date: date,
     timestamp: timestamp,
-  });
+  };
+
+  createOrUpdateReview(id, reviewInfo);
 });
 
 app.get("/reviews/:id", async (req, res) => {
   const { id } = req.params;
-  console.log(id);
-  // const list = [];
-  const reviews = await Review.find({ _id: id });
-  res.json(reviews);
+  // console.log(id);
+  const reviews = await Review.findById(id);
+  if(reviews!==null) res.json(reviews.reviewInfo);
 });
 
 // app.get("/movies", (request, response) => {
