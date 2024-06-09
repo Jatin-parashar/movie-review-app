@@ -1,0 +1,27 @@
+{
+    "uid": "KrXn1SKkPmcgIuVH2rzuEBQBdqx1",
+    "email": "parashar18jatin@gmail.com",
+    "emailVerified": true,
+    "displayName": "Jatin Parashar",
+    "isAnonymous": false,
+    "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocJB8Wp-ubhAV5KWqexSsV3RC-Hs3uY6bweKJFSj836x3Hf66W32bA=s96-c",
+    "providerData": [
+        {
+            "providerId": "google.com",
+            "uid": "111740837687573588973",
+            "displayName": "Jatin Parashar",
+            "email": "parashar18jatin@gmail.com",
+            "phoneNumber": null,
+            "photoURL": "https://lh3.googleusercontent.com/a/ACg8ocJB8Wp-ubhAV5KWqexSsV3RC-Hs3uY6bweKJFSj836x3Hf66W32bA=s96-c"
+        }
+    ],
+    "stsTokenManager": {
+        "refreshToken": "AMf-vBx1v5PBXXsTRVP9UsotkqTy2_tpkQ1rsAlSWUISPzzI__o0PtLnbV8hqm2r3dH6bQVEzJReMNQ8k8mwWfFvvPAvvuJcV8lEMr8WSwnCXNAC_RdVL-y3miBLRGcP2bA-h0eX7MPZx-lMk7Ja9n7AdTp8wnv5sI3luj8xW7gcbhtBtEqdmrDT0VwDp9ddEnup2yk1ywkVeuT3z-TwP-mEZp083Hd3J85mhl3kX-bhRj8-eEF82Hv50pMe5AyyyroOBd-mIlwbFjr9bQyHSOL0vH6_ZTC6fO0q0epPpvG__jxudBw8MRXqPfbKQxIDYiWiNsnZfA0Fbtf8i8Xr1g7QNC6dcfTXtMDCqqIjxX0_Pni7H0nrEIUTAW53H4RkACR8gSx4Ry_h8AAVZz6LnRvFajzQx_AbYT_5_r1P3EIR8aL0NnQa-xlApNEnvgLYOcVRPrGFYeFNcqrxs2ZxO-TdFk_Xiypu1A",
+        "accessToken": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjMzMDUxMThiZTBmNTZkYzA4NGE0NmExN2RiNzU1NjVkNzY4YmE2ZmUiLCJ0eXAiOiJKV1QifQ.eyJuYW1lIjoiSmF0aW4gUGFyYXNoYXIiLCJwaWN0dXJlIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUNnOG9jSkI4V3AtdWJoQVY1S1dxZXhTc1YzUkMtSHMzdVk2YndlS0pGU2o4MzZ4M0hmNjZXMzJiQT1zOTYtYyIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9tb3ZpZS1yZXZpZXctYXBwLTQ0N2Q4IiwiYXVkIjoibW92aWUtcmV2aWV3LWFwcC00NDdkOCIsImF1dGhfdGltZSI6MTcxNzg1MjkzNywidXNlcl9pZCI6IktyWG4xU0trUG1jZ0l1Vkgycnp1RUJRQmRxeDEiLCJzdWIiOiJLclhuMVNLa1BtY2dJdVZIMnJ6dUVCUUJkcXgxIiwiaWF0IjoxNzE3ODUyOTM3LCJleHAiOjE3MTc4NTY1MzcsImVtYWlsIjoicGFyYXNoYXIxOGphdGluQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7Imdvb2dsZS5jb20iOlsiMTExNzQwODM3Njg3NTczNTg4OTczIl0sImVtYWlsIjpbInBhcmFzaGFyMThqYXRpbkBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJnb29nbGUuY29tIn19.KXUvgfE6t1b7uDnb2zd--NW1fsD922KxZEsIVfi__XFvIxjIg7Cd5UkWtlKEUc5csCjeqsU8sOUD7gfj7KQOlWv4J5kC1qjq19LNVASHzUy-He5BdNzr2raK91b4Ns70ss2c69hON-xU9a9d8sZnIEJqHvQeqNvwXh7unuus_4pasVhNS6BRz1-bTYXKDrMtd2y-btg20JLVtq59Yfq0Vn-eTAhY0I1Hb73QfhDR8EIfq6FZuor-_auDsxcZk_glyIF2544dmk4KJneTnorogMy0masUvWJPFQdKEGavR5kq2VP12bamIqVLvYoelH8SLNgczYeSuFBgguU0QMUhgw",
+        "expirationTime": 1717856538119
+    },
+    "createdAt": "1717852937145",
+    "lastLoginAt": "1717852937146",
+    "apiKey": "AIzaSyB0LBPjqlQo-aGewTHwkjf5RaY8RFIKr-Q",
+    "appName": "[DEFAULT]"
+  }

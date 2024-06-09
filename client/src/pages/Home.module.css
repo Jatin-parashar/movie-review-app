@@ -1,6 +1,6 @@
 .style {
-    height: 92vh;
-    width: 100vw;
+    height: 91.5vh;
+    width: 100%;
     display: flex;
     /* border: 2px solid red; */
     opacity: 0.7;
@@ -11,6 +11,7 @@
     -moz-user-select: none;
     -webkit-user-select: none;
     user-select: none;
+    /* border: 2px solid red; */
 
     >img {
         width: 150px;

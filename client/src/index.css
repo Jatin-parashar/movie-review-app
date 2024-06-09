@@ -2,27 +2,83 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #1c1c1c;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+body {
+  color-scheme: light dark;
+}
 
-*{
+* {
   margin: 0;
   padding: 0;
 }
 
+.box {
+  border: 1px solid #dfdfdf;
 
-.alignCenter{
+  background-color: #fff;
+  width: 330px;
+
+  border: none;
+  padding: 30px;
+  /* Increase padding for better spacing */
+  border-radius: 10px;
+  /* Add border-radius for rounded corners */
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  /* Add box shadow for a textured look */
+}
+
+.box h2 {
+  margin-bottom: 20px;
+  /* Add margin to the heading */
+  font-size: 24px;
+  /* Increase font size */
+  color: #4a4e69;
+  /* Set font color to a dark gray */
+}
+
+.Form.Control:focus {
+  outline: none;
+}
+
+.g-btn {
+  width: 100% !important;
+  height: 40px !important;
+  line-height: 40px !important;
+  font-size: 15px !important;
+}
+
+.g-btn > div,
+.g-btn > div > svg {
+  width: 40px !important;
+  height: 38px !important;
+}
+
+.auth {
+  background-image: linear-gradient(
+    to right,
+    #d49ea9,
+    #d29cb4,
+    #cb9cc1,
+    #bf9dcf,
+    #aba1db,
+    #9aabe8,
+    #84b5f2,
+    #69bff8,
+    #52cffe,
+    #41dfff,
+    #46eefa,
+    #5ffbf1
+  );
+
   display: flex;
   justify-content: center;
+  align-content: center;
+  width: 100%;
   align-items: center;
   flex-direction: column;
-  /* border: 2px solid red; */
+  height: 100vh;
 }

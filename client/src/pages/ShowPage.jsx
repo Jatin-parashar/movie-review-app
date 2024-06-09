@@ -36,14 +36,17 @@ const ShowPage = () => {
 
     fetchdata();
   }, []);
-
+  const [open,setOpen]= useState(false);
+  function handleTitleShow(openReview){
+    setOpen(openReview);
+  }
   // console.log(p.id);
   return (
     <>
       {data ? (
         <>
-          <ShowInfoExpanded data={data} />
-          <Review />
+          {open ? <h1 style={{marginTop:"20px"}}>{data.title}</h1> : <ShowInfoExpanded data={data} />}
+          <Review handleTitleShow={handleTitleShow}/>
         </>
       ) : (
         <h2>Loading...</h2>

@@ -1,32 +1,52 @@
 import React, { useEffect, useState } from "react";
 import classes from "./Review.module.css";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import AddReview from "./AddReview";
 import Button from "../../UI/Button";
 import AllReviews from "./AllReviews";
+import { useUserAuth } from "../../store/UserAuthContextProvider";
 
-const Review = () => {
+const Review = ({ handleTitleShow }) => {
   const [openReview, setOpenReview] = useState(false);
   const [reviewsList, setReviewsList] = useState([]);
   const [averageRating, setAverageRating] = useState(0);
   const [isAdded, setIsAdded] = useState(0);
+  const [showMessage, setShowMessage] = useState(true);
+
+  const navigate = useNavigate();
+  const { user } = useUserAuth();
+
+  useEffect(() => {
+    if (!user) {
+      setOpenReview(false);
+      handleTitleShow(false);
+    }
+  }, [user]);
+
 
   function onReview() {
+    if (!user) {
+      navigate("/login", {
+        state: { from: location.pathname, addReview: true },
+        replace: true,
+      });
+      return;
+    }
+
     setOpenReview(true);
+    handleTitleShow(true);
   }
   const { id } = useParams();
-  //   console.log(id);
 
   useEffect(() => {
     fetch(`http://localhost:3000/reviews/${id}`)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         let ratingAv = [];
         for (let x in data) {
           ratingAv.push(parseInt(data[x].rating));
         }
-        // console.log(ratingAv.length);
 
         if (ratingAv.length > 0) {
           let sum = ratingAv.reduce((ac, val) => {
@@ -36,9 +56,26 @@ const Review = () => {
           setAverageRating(average);
         }
         setReviewsList(data);
-        console.log("Called", isAdded);
+        // console.log("Called", isAdded);
       });
   }, [isAdded]);
+
+  useEffect(() => {
+    if (reviewsList.length === 0) {
+      const timer = setTimeout(() => {
+        setShowMessage(false);
+      }, 3000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [reviewsList]);
+
+  useEffect(() => {
+    if (user && location.state?.addReview) {
+      setOpenReview(true);
+      handleTitleShow(true);
+    }
+  }, [user, location.state, handleTitleShow]);
 
   return (
     <>
@@ -47,7 +84,7 @@ const Review = () => {
           <Button onClick={onReview}>Add Review</Button>
         </div>
       )}
-      {openReview && (
+      {openReview && user && (
         <>
           <AddReview setIsAdded={setIsAdded} />
         </>
@@ -80,7 +117,11 @@ const Review = () => {
           </div>
         </>
       ) : (
-        <p>No reviews done yet!</p>
+        <h3
+          className={`${classes.message} ${!showMessage ? classes.hide : ""}`}
+        >
+          Be the first one to review
+        </h3>
       )}
     </>
   );
